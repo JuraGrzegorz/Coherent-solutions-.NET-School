@@ -19,18 +19,22 @@ namespace HW1_2
                 sum=sum+charVal*(numberOfDigits+1-i);
             }
             
-            string checkDigit;
-            sum = sum %11;
- 
-            if (11-sum == 10)
+            string checkDigitString;
+            int checkDigit= 11 - sum%11;
+
+            switch(checkDigit)
             {
-                checkDigit = 'X'.ToString();
+                case 11:
+                    checkDigitString = "0";
+                    break;
+                case 10:
+                    checkDigitString = "X";
+                    break;
+                default:
+                    checkDigitString = checkDigit.ToString();
+                    break;
             }
-            else
-            {
-                checkDigit=(11-sum).ToString();
-            }
-            Console.WriteLine(digits + checkDigit);
+            Console.WriteLine(digits + checkDigitString);
 
         }
     }

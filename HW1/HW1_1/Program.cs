@@ -6,16 +6,24 @@
         {
 
             int numericalSystem = 12;
-            int numberPosition = 11-1;
+            int numberPosition = 10;
             int numberOfOccurrence = 2;
 
             Console.WriteLine("enter two integers");
             int a=int.Parse(Console.ReadLine());
             int b=int.Parse(Console.ReadLine());
 
+            
+            if (a > b)
+            {
+                int holder=a;
+                a = b;
+                b = holder;
+            }
+
             for (int i = a; i <=b; i++)
             {
-                int numerator = i;
+                int numerator = Math.Abs(i);
                 int counter = 0;
                 while (numerator !=0)
                 {

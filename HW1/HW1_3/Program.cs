@@ -16,24 +16,24 @@
                 userDigits[i]=int.Parse(Console.ReadLine());
             }
 
-            int index = 0;
+            int resSize = 0;
             for (int i = 0; i < arraySize; i++)
             {
                 int j;
-                for (j = 0; j < arraySize; j++)
+                for (j = 0; j < resSize; j++)
                 {
-                    if (i!=j && userDigits[i] == userDigits[j])
+                    if (outputValues[j] == userDigits[i])
                     {
                         break;
                     }
                 }
-                if (j == arraySize)
+                if (j == resSize)
                 {
-                    outputValues[index++] = userDigits[i];
+                    outputValues[resSize++] = userDigits[i];
                 }
             }
 
-            for (int i = 0; i < index; i++)
+            for (int i = 0; i < resSize; i++)
             {
                 Console.Write(outputValues[i]+" ");
             }
