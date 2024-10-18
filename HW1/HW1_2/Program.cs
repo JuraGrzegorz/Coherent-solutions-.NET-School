@@ -20,9 +20,9 @@ namespace HW1_2
             }
             
             string checkDigitString;
-            int checkDigit= 11 - sum%11;
+            int checkDigit = (11 - sum % 11) % 11; ;
 
-            switch(checkDigit)
+            switch (checkDigit)
             {
                 case 11:
                     checkDigitString = "0";

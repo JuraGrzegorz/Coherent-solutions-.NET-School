@@ -9,7 +9,7 @@
             int arraySize=int.Parse(Console.ReadLine());
 
             int[] userDigits= new int[arraySize];
-            int[] outputValues= new int[arraySize];
+            int[] outputValues= new int[0];
 
             for (int i = 0; i < arraySize; i++)
             {
@@ -29,15 +29,16 @@
                 }
                 if (j == resSize)
                 {
+                    Array.Resize(ref outputValues, resSize+1);
                     outputValues[resSize++] = userDigits[i];
                 }
             }
 
-            for (int i = 0; i < resSize; i++)
+            
+            foreach(int val in outputValues)
             {
-                Console.Write(outputValues[i]+" ");
+                Console.Write(val + " ");
             }
-
         }
 
     }   
